@@ -1,0 +1,20 @@
+---
+- getent:
+    database: group
+    key: systemd-journal
+    fail_key: no
+- name: "/var/log/journal"
+  file:
+    path: "/var/log/journal"
+    state: directory
+    owner: "root"
+    group: "systemd-journal"
+    mode: 02755
+  when: getent_group['systemd-journal']
+- name: "adduser {{ user }} systemd-journal"
+  user:
+    name: "{{ item }}"
+    groups: systemd-journal
+    append: yes
+  when: getent_group['systemd-journal']
+  with_items: "{{ journald_users }}"

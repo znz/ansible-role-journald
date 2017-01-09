@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  author: Kazuhiro NISHIYAMA
+  description: Setup /var/log/journal
+  license: MIT
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - precise
+    - trusty
+    - xenial
+  - name: Debian
+    versions:
+    - wheezy
+    - jessie
+
+  categories:
+  - logging
+  - system
+
+dependencies: []
