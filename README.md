@@ -26,7 +26,7 @@ Normal usage:
     - hosts: all
       become: yes
       roles:
-      - znzj.journald
+      - znz.journald
 
 With users:
 
@@ -34,7 +34,7 @@ With users:
     - hosts: all
       become: yes
       roles:
-      - { role: znzj.journald, journald_users: ['foo', 'bar'] }
+      - { role: znz.journald, journald_users: ['foo', 'bar'] }
 
 ## License
 
